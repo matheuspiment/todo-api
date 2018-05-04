@@ -1,0 +1,24 @@
+{
+  "name": "todo-api",
+  "version": "0.0.1",
+  "description": "A simple API for todo list.",
+  "main": "index.js",
+  "repository": "https://github.com/matheuspiment/todo-api",
+  "author": "Matheus Pimenta <matheuspiment@hotmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "koa": "^2.5.1",
+    "mongoose": "^5.0.17"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "nodemon": "^1.17.3"
+  }
+}
