@@ -13,7 +13,10 @@
   },
   "dependencies": {
     "koa": "^2.5.1",
-    "mongoose": "^5.0.17"
+    "koa-body": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.0.17",
+    "require-dir": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
