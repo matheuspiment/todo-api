@@ -34,6 +34,7 @@ router.use(authMiddleware);
  */
 router.post('/todos', controllers.toDoController.create);
 router.delete('/todos/:id', controllers.toDoController.destroy);
+router.put('/todos/:id', controllers.toDoController.toggle);
 
 /**
  * Users
