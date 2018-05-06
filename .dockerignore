@@ -1,4 +1,14 @@
 .travis.yml
-docker-compose.yml
+mongo/
+node_modules/
+test/
+.DS_Store
+.editorconfig
+.eslintignore
+.eslintrc
+.git
+.gitignore
+docker-compse.yml
+Dockerfile
 README.md
 LICENSE
