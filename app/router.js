@@ -7,15 +7,13 @@ const authMiddleware = require('./middlewares/auth');
 
 const controllers = requireDir('./controllers');
 
-router.use(async (ctx, next) => {
-  try {
-    await next();
-  } catch (err) {
-    ctx.status = err.status || 500;
-    ctx.body = { error: 'Internal server error.' };
-    ctx.app.emit('error', err, ctx);
-  }
+/**
+ * Main
+ */
+router.get('/', (ctx) => {
+  ctx.body = 'ToDo API';
 });
+
 
 /**
  * Auth

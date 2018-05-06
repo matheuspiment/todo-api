@@ -17,6 +17,29 @@ app.use(koaBody());
 
 const router = require('./app/router');
 
+app.use(async (ctx, next) => {
+  try {
+    await next();
+    if (ctx.status === 404) {
+      return ctx.throw(404);
+    }
+  } catch (err) {
+    ctx.status = err.status || 500;
+
+    switch (ctx.status) {
+      case 404:
+        ctx.body = { error: 'Not Found.' };
+        break;
+
+      default:
+        ctx.body = { error: 'Internal server error.' };
+        break;
+    }
+
+    ctx.app.emit('error', err, ctx);
+  }
+});
+
 app.use(router.routes());
 
 app.on('error', (err) => {
