@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.2.1",
     "koa": "^2.5.1",
     "koa-body": "^2.5.0",
     "koa-router": "^7.4.0",

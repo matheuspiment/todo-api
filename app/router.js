@@ -8,5 +8,6 @@ const controllers = requireDir('./controllers');
  * Auth
  */
 router.post('/singup', controllers.authController.signup);
+router.post('/singin', controllers.authController.singin);
 
 module.exports = router;
