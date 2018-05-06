@@ -18,9 +18,7 @@ const router = require('./app/router');
 app.use(router.routes());
 
 app.on('error', (err) => {
-  Raven.captureException(err, (err, eventId) => {
-    console.log(`Reported error ${eventId}`);
-  });
+  Raven.captureException(err);
 });
 
 app.listen(3000);

@@ -25,7 +25,7 @@ router.post('/singin', controllers.authController.singin);
  * ===========
  * Auth routes
  */
-router.use('/todo', authMiddleware);
+router.use(authMiddleware);
 
 router.get('/todo', (ctx) => {
   console.log(ctx.request.userId);

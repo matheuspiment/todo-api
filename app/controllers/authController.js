@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
 module.exports = {
-  async singin(ctx, next) {
+  async singin(ctx) {
     try {
       const { email, password } = ctx.request.body;
 
-      const user = await User.find444One({ email });
+      const user = await User.findOne({ email });
 
       if (!user) {
         ctx.status = 400;
@@ -27,12 +27,11 @@ module.exports = {
       };
       return ctx.body;
     } catch (err) {
-      ctx.throw('500', err);
-      return next();
+      return ctx.throw('500', err);
     }
   },
 
-  async signup(ctx, next) {
+  async signup(ctx) {
     try {
       const { email, username } = ctx.request.body;
 
@@ -50,8 +49,7 @@ module.exports = {
 
       return ctx.body;
     } catch (err) {
-      ctx.throw('500', err);
-      return next();
+      return ctx.throw('500', err);
     }
   },
 };
