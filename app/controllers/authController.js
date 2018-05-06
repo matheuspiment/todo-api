@@ -7,7 +7,7 @@ module.exports = {
     try {
       const { email, password } = ctx.request.body;
 
-      const user = await User.findOne({ email });
+      const user = await User.find444One({ email });
 
       if (!user) {
         ctx.status = 400;
@@ -27,7 +27,8 @@ module.exports = {
       };
       return ctx.body;
     } catch (err) {
-      return next(err);
+      ctx.throw('500', err);
+      return next();
     }
   },
 
@@ -49,7 +50,8 @@ module.exports = {
 
       return ctx.body;
     } catch (err) {
-      return next(err);
+      ctx.throw('500', err);
+      return next();
     }
   },
 };
