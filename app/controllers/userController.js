@@ -3,6 +3,18 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
 module.exports = {
+  async me(ctx) {
+    try {
+      const user = await User.findById(ctx.request.userId);
+
+      ctx.body = user;
+
+      return ctx.body;
+    } catch (err) {
+      return ctx.throw(500, err);
+    }
+  },
+
   async update(ctx) {
     try {
       const id = ctx.request.userId;
