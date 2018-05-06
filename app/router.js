@@ -11,7 +11,7 @@ const controllers = requireDir('./controllers');
  * Main
  */
 router.get('/', (ctx) => {
-  ctx.body = 'ToDo API';
+  ctx.body = 'ToDo API v1';
 });
 
 
