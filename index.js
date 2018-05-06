@@ -10,7 +10,7 @@ const dbConfig = require('./config/database');
 
 const app = new Koa();
 
-mongoose.connect(dbConfig.url);
+mongoose.connect(dbConfig.uri);
 requireDir(dbConfig.modelsPath);
 
 app.use(koaBody());
