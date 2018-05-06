@@ -27,9 +27,11 @@ router.post('/singin', controllers.authController.singin);
  */
 router.use(authMiddleware);
 
-router.get('/todo', (ctx) => {
-  console.log(ctx.request.userId);
-  ctx.body = 'OK';
-});
+/**
+ * ToDo
+ */
+router.post('/todo', controllers.toDoController.create);
+router.delete('/todo/:id', controllers.toDoController.destroy);
+
 
 module.exports = router;
