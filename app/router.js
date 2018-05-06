@@ -11,7 +11,9 @@ router.use(async (ctx, next) => {
   try {
     await next();
   } catch (err) {
-    throw err;
+    ctx.status = err.status || 500;
+    ctx.body = { error: 'Internal server error.' };
+    ctx.app.emit('error', err, ctx);
   }
 });
 
@@ -30,8 +32,12 @@ router.use(authMiddleware);
 /**
  * ToDo
  */
-router.post('/todo', controllers.toDoController.create);
-router.delete('/todo/:id', controllers.toDoController.destroy);
+router.post('/todos', controllers.toDoController.create);
+router.delete('/todos/:id', controllers.toDoController.destroy);
 
+/**
+ * Users
+ */
+router.put('/users', controllers.userController.update);
 
 module.exports = router;
