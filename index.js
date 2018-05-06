@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const Koa = require('koa');
 const koaBody = require('koa-body');
 const mongoose = require('mongoose');

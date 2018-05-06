@@ -41,5 +41,6 @@ router.put('/todos/:id', controllers.toDoController.toggle);
  */
 router.get('/users/me', controllers.userController.me);
 router.put('/users', controllers.userController.update);
+router.get('/list', controllers.userController.list);
 
 module.exports = router;

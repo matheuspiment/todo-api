@@ -68,3 +68,5 @@ typings/
 # MongoDB
 
 mongo/
+config/
+.env*

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const User = mongoose.model('User');
+const ToDo = mongoose.model('ToDo');
 
 module.exports = {
   async me(ctx) {
@@ -8,6 +9,24 @@ module.exports = {
       const user = await User.findById(ctx.request.userId);
 
       ctx.body = user;
+
+      return ctx.body;
+    } catch (err) {
+      return ctx.throw(500, err);
+    }
+  },
+
+  async list(ctx) {
+    try {
+      const user = await User.findById(ctx.request.userId);
+
+      const toDoList = await ToDo
+        .find({
+          user: { $in: [user.id] },
+        })
+        .sort('-createdAt');
+
+      ctx.body = toDoList;
 
       return ctx.body;
     } catch (err) {
