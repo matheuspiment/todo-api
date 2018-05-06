@@ -27,7 +27,7 @@ module.exports = {
       };
       return ctx.body;
     } catch (err) {
-      return ctx.throw('500', err);
+      return ctx.throw(500, err);
     }
   },
 
@@ -49,7 +49,7 @@ module.exports = {
 
       return ctx.body;
     } catch (err) {
-      return ctx.throw('500', err);
+      return ctx.throw(500, err);
     }
   },
 };
