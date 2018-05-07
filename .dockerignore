@@ -1,7 +1,7 @@
 .travis.yml
 mongo/
 node_modules/
-test/
+__test__/
 .DS_Store
 .editorconfig
 .eslintignore
