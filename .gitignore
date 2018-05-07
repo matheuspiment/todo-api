@@ -69,4 +69,4 @@ typings/
 
 mongo/
 config/
-.env*
+.env.production

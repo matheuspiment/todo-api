@@ -1,4 +1,8 @@
-require('dotenv').config();
+const envPath = process.env.NODE_ENV
+  ? `.env.${process.env.NODE_ENV}`
+  : '.env';
+
+require('dotenv').config({ path: envPath });
 
 const Koa = require('koa');
 const koaBody = require('koa-body');
@@ -46,4 +50,6 @@ app.on('error', (err) => {
   Raven.captureException(err);
 });
 
-app.listen(process.env.PORT || 3000);
+const server = app.listen(process.env.PORT || 3000);
+
+module.exports = server;

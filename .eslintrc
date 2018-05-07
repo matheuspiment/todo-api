@@ -1,6 +1,14 @@
 {
     "extends": "airbnb-base",
+    "env": {
+      "mocha": true
+    },
+    "plugins": [
+      "chai-friendly"
+    ],
     "rules": {
-      "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+      "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+      "no-unused-expressions": 0,
+      "chai-friendly/no-unused-expressions": 2
     }
   }
