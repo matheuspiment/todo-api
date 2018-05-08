@@ -28,7 +28,7 @@ describe('Authentication', () => {
       expect(response.body).to.have.property('token');
     });
 
-    it('it should not be able to sign up with duplicates', async () => {
+    it('it should not be able to sign up with duplicates credentials', async () => {
       const user = await factory.create('User');
       const user2 = await factory.attrs('User', {
         email: user.email,

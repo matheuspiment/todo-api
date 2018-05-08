@@ -16,4 +16,9 @@ factory.define('User', mongoose.model('User'), {
   password: faker.internet.password,
 });
 
+factory.define('ToDo', mongoose.model('ToDo'), {
+  content: faker.lorem.sentence(),
+  user: factory.assoc('User', '_id'),
+});
+
 module.exports = factory;

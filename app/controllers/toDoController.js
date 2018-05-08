@@ -39,6 +39,12 @@ module.exports = {
         return ctx.body;
       }
 
+      if (ctx.request.userId !== toDo.user) {
+        ctx.status = 401;
+        ctx.body = { error: 'This todo is not yours.' };
+        return ctx.body;
+      }
+
       toDo.status = !toDo.status;
       await toDo.save();
 
