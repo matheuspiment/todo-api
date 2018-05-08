@@ -9,6 +9,7 @@ __test__/
 .git
 .gitignore
 docker-compse.yml
+sample-production.yml
 Dockerfile
 README.md
 LICENSE
