@@ -8,3 +8,9 @@
 :sunglasses: A simple node API 
 
 This API has an image available on [docker hub](https://hub.docker.com/r/matheuspiment/todo-api/) and a hosted version on [heroku](https://api-todo-list.herokuapp.com/v1)
+
+## Production
+
+* A sample `docker-compose.yml` file for production purpose: [sample-production.yml](https://github.com/matheuspiment/todo-api/blob/master/sample-production.yml)
+
+* A sample `.env` file: [.env.staging](https://github.com/matheuspiment/todo-api/blob/master/.env.staging)
