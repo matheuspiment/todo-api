@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "test": "NODE_ENV=test mocha __tests__/**/*.test.js --exit",
-    "start": "node ./index.js"
+    "start": "nodemon -L ./index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -19,6 +19,7 @@
     "koa-body": "^2.5.0",
     "koa-router": "^7.4.0",
     "mongoose": "^5.0.17",
+    "nodemon": "^1.17.3",
     "raven": "^2.6.0",
     "require-dir": "^1.0.0"
   },
@@ -31,7 +32,6 @@
     "eslint-plugin-import": "^2.11.0",
     "factory-girl": "^5.0.2",
     "faker": "^4.1.0",
-    "mocha": "^5.1.1",
-    "nodemon": "^1.17.3"
+    "mocha": "^5.1.1"
   }
 }
