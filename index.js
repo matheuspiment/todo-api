@@ -14,7 +14,6 @@ const dbConfig = require('./config/database');
 
 const app = new Koa();
 
-console.log(dbConfig.uri);
 mongoose.connect(dbConfig.uri);
 requireDir(dbConfig.modelsPath);
 

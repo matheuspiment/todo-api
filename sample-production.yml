@@ -13,5 +13,7 @@ services:
       NODE_ENV: "production"
     links:
       - "mongo"
-    expose:
-      - 3000
+    ports:
+      - 3000:3000
+    # expose:
+    #   - 3000
