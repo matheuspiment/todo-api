@@ -67,5 +67,6 @@ typings/
 
 # MongoDB
 
+dist/
 mongo/
 config/

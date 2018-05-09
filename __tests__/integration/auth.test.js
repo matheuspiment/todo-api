@@ -6,7 +6,7 @@ const { expect } = chai;
 
 chai.use(chaiHttp);
 
-const app = require('../../index');
+const app = require('../../src/index');
 const factory = require('../factories');
 
 const User = mongoose.model('User');

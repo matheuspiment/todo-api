@@ -4,8 +4,8 @@
   "description": "A simple API for todo list.",
   "main": "index.js",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/matheuspiment/todo-api"
+    "type": "git",
+    "url": "https://github.com/matheuspiment/todo-api"
   },
   "author": "Matheus Pimenta <matheuspiment@hotmail.com>",
   "license": "MIT",
@@ -13,10 +13,11 @@
   "scripts": {
     "build": "babel src/ -d dist/",
     "test": "NODE_ENV=test mocha __tests__/**/*.test.js --exit",
-    "start": "node ./index.js",
-    "wath": "nodemon ./index.js --exec babel-node"
+    "start": "node dist/index.js",
+    "wath": "nodemon src/index.js --exec babel-node"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^5.0.1",
     "jsonwebtoken": "^8.2.1",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "chai": "^4.1.2",

@@ -1,14 +1,15 @@
+import 'babel-polyfill';
+import Koa from 'koa';
+import koaBody from 'koa-body';
+import mongoose from 'mongoose';
+import requireDir from 'require-dir';
+import Raven from './app/services/sentry';
+
 const envPath = process.env.NODE_ENV
   ? `.env.${process.env.NODE_ENV}`
   : '.env';
 
 require('dotenv').config({ path: envPath });
-
-const Koa = require('koa');
-const koaBody = require('koa-body');
-const mongoose = require('mongoose');
-const requireDir = require('require-dir');
-const Raven = require('./app/services/sentry');
 
 const dbConfig = require('./config/database');
 
