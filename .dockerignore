@@ -3,6 +3,7 @@ mongo/
 node_modules/
 __test__/
 .DS_Store
+.babelrc
 .editorconfig
 .eslintignore
 .eslintrc
