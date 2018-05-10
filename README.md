@@ -14,3 +14,19 @@ This API has an image available on [docker hub](https://hub.docker.com/r/matheus
 * A sample `docker-compose.yml` file for production purpose: [sample-production.yml](https://github.com/matheuspiment/todo-api/blob/master/sample-production.yml)
 
 * A sample `.env` file: [.env.production](https://github.com/matheuspiment/todo-api/blob/master/.env.production)
+
+## Improvements
+
+The improvements for this project can be seen in the [development branch](https://github.com/matheuspiment/todo-api/tree/development):
+
+### Working on:
+
+* Improve app structure.
+* Add [flow](https://github.com/facebook/flow).
+* Add [babel](https://babeljs.io/).
+
+### To Do
+
+* Add [graphql](https://github.com/graphql/graphql-js).
+
+**Reference**: https://github.com/entria/graphql-dataloader-boilerplate/
