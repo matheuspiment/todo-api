@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:8.10
 
 MAINTAINER Entria <hello@entria.com.br>
 
