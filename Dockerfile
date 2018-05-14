@@ -1,10 +1,16 @@
-FROM node:8.10-alpine
+FROM node:8
 
-WORKDIR /usr/src/app/
+MAINTAINER Entria <hello@entria.com.br>
 
-COPY package.json /usr/src/app/
-RUN yarn install && yarn cache clean
-COPY . /usr/src/app/
-# RUN cp .env.production /usr/src/app/
+RUN mkdir -p /app
+WORKDIR /app
 
-CMD yarn run start
+COPY package.json /app
+RUN yarn install
+
+COPY . /app
+
+#cachable
+RUN yarn build
+
+CMD ["yarn", "start"]

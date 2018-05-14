@@ -1,56 +1,42 @@
+// @flow
 import 'babel-polyfill';
-import Koa from 'koa';
-import koaBody from 'koa-body';
-import mongoose from 'mongoose';
-import requireDir from 'require-dir';
-import Raven from './app/services/sentry';
+import { createServer } from 'http';
+import app from './app';
+import { connectDatabase } from './database';
+import { graphqlPort } from './config';
 
-const envPath = process.env.NODE_ENV
-  ? `.env.${process.env.NODE_ENV}`
-  : '.env';
+import { SubscriptionServer } from 'subscriptions-transport-ws';
+import { execute, subscribe } from 'graphql';
 
-require('dotenv').config({ path: envPath });
+import { schema } from './schema';
 
-const dbConfig = require('./config/database');
-
-const app = new Koa();
-
-mongoose.connect(dbConfig.uri);
-requireDir(dbConfig.modelsPath);
-
-app.use(koaBody());
-
-const router = require('./app/router');
-
-app.use(async (ctx, next) => {
+(async () => {
   try {
-    await next();
-    if (ctx.status === 404) {
-      return ctx.throw(404);
-    }
-  } catch (err) {
-    ctx.status = err.status || 500;
-
-    switch (ctx.status) {
-      case 404:
-        ctx.body = { error: 'Not Found.' };
-        break;
-
-      default:
-        ctx.body = { error: 'Internal server error.' };
-        break;
-    }
-
-    ctx.app.emit('error', err, ctx);
+    const info = await connectDatabase();
+    console.log(`Connected to ${info.host}:${info.port}/${info.name}`);
+  } catch (error) {
+    console.error('Unable to connect to database');
+    process.exit(1);
   }
-});
 
-app.use(router.routes());
+  const server = createServer(app.callback());
 
-app.on('error', (err) => {
-  Raven.captureException(err);
-});
+  server.listen(graphqlPort, () => {
+    console.log(`server now listening at :${graphqlPort}`);
+    SubscriptionServer.create(
+      {
+        onConnect: connectionParams => console.log('client subscription connected!', connectionParams),
+        onDisconnect: () => console.log('client subscription disconnected!'),
+        execute,
+        subscribe,
+        schema,
+      },
+      {
+        server,
+        path: '/subscriptions',
+      },
+    );
+  });
 
-const server = app.listen(process.env.PORT || 3000);
-
-module.exports = server;
+  console.log(`Server started on port ${graphqlPort}`);
+})();
