@@ -1,6 +1,6 @@
 # GraphQL DataLoader Boilerplate
 
-[![CircleCI](https://circleci.com/gh/entria/graphql-dataloader-boilerplate.svg?style=svg)](https://circleci.com/gh/entria/graphql-dataloader-boilerplate)
+[![Build Status](https://travis-ci.org/matheuspiment/todo-api.svg?branch=development)](https://travis-ci.org/matheuspiment/todo-api)
 [![codecov](https://codecov.io/gh/entria/graphql-dataloader-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/entria/graphql-dataloader-boilerplate)
 
 Very simple boilerplate using GraphQL and DataLoader
