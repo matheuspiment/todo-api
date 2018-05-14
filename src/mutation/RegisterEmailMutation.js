@@ -1,6 +1,7 @@
 // @flow
 import { GraphQLString, GraphQLNonNull } from 'graphql';
 import { mutationWithClientMutationId } from 'graphql-relay';
+
 import { User } from '../model';
 import { generateToken } from '../auth';
 import pubSub, { EVENTS } from '../pubSub';

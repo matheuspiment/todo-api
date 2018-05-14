@@ -9,8 +9,12 @@ services:
         environment:
             NODE_ENV: test
             MONGO_URL: mongodb://mongo/test
+        ports:
+            - "5000:5000"
         volumes:
             - "./src:/app/src"
         entrypoint: "yarn test:watch"
     mongo:
         image: mongo
+        ports:
+            - "27017:27017"

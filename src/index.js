@@ -1,12 +1,12 @@
 // @flow
 import 'babel-polyfill';
 import { createServer } from 'http';
+import { SubscriptionServer } from 'subscriptions-transport-ws';
+import { execute, subscribe } from 'graphql';
+
 import app from './app';
 import { connectDatabase } from './database';
 import { graphqlPort } from './config';
-
-import { SubscriptionServer } from 'subscriptions-transport-ws';
-import { execute, subscribe } from 'graphql';
 
 import { schema } from './schema';
 
