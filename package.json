@@ -62,7 +62,9 @@
     "testEnvironment": "<rootDir>/test/environment/mongodb",
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "./dist",
+      "./dist"
+    ],
+    "coveragePathIgnorePatterns": [
       "./test"
     ],
     "coverageReporters": [
