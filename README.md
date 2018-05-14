@@ -1,7 +1,7 @@
 # GraphQL DataLoader Boilerplate
 
 [![Build Status](https://travis-ci.org/matheuspiment/todo-api.svg?branch=development)](https://travis-ci.org/matheuspiment/todo-api)
-[![codecov](https://codecov.io/gh/entria/graphql-dataloader-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/entria/graphql-dataloader-boilerplate)
+[![Coverage Status](https://coveralls.io/repos/github/matheuspiment/todo-api/badge.svg?branch=development)](https://coveralls.io/github/matheuspiment/todo-api?branch=development)
 
 Very simple boilerplate using GraphQL and DataLoader
 
